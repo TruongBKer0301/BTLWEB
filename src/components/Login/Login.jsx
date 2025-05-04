@@ -5,6 +5,11 @@ import "./Login.css";
 const Login = () => {
     const [isRegistering, setIsRegistering] = useState(false);
     const [formData, setFormData] = useState({
+<<<<<<< HEAD
+=======
+        name: "",
+        phone: "",
+>>>>>>> de5e4bb (tailen)
         email: "",
         password: "",
         confirmPassword: "",
@@ -16,11 +21,46 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+<<<<<<< HEAD
         if (isRegistering) {
             if (formData.password !== formData.confirmPassword) {
                 alert("Mật khẩu xác nhận không khớp!");
                 return;
             }
+=======
+
+        // Validation for name
+        if (isRegistering && !/^[a-zA-Z\s]+$/.test(formData.name)) {
+            alert("Tên chỉ được chứa chữ cái và khoảng trắng!");
+            return;
+        }
+
+        // Validation for email
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            alert("Email không hợp lệ!");
+            return;
+        }
+
+        // Validation for phone number
+        if (isRegistering && !/^\d{10}$/.test(formData.phone)) {
+            alert("Số điện thoại phải chứa 10 chữ số!");
+            return;
+        }
+
+        // Validation for password
+        if (formData.password.length < 8) {
+            alert("Mật khẩu phải có ít nhất 8 ký tự!");
+            return;
+        }
+
+        // Validation for confirm password
+        if (isRegistering && formData.password !== formData.confirmPassword) {
+            alert("Mật khẩu xác nhận không khớp!");
+            return;
+        }
+
+        if (isRegistering) {
+>>>>>>> de5e4bb (tailen)
             console.log("Đăng ký với:", formData);
         } else {
             console.log("Đăng nhập với:", formData);
@@ -32,6 +72,35 @@ const Login = () => {
             <div className="auth-box p-4 rounded shadow bg-white">
                 <h2 className="text-center mb-4">{isRegistering ? "Đăng ký" : "Đăng nhập"}</h2>
                 <form onSubmit={handleSubmit}>
+<<<<<<< HEAD
+=======
+                    {isRegistering && (
+                        <>
+                            <div className="mb-3">
+                                <label className="form-label">Tên:</label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    className="form-control"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+                            <div className="mb-3">
+                                <label className="form-label">Số điện thoại:</label>
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    className="form-control"
+                                    value={formData.phone}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+                        </>
+                    )}
+>>>>>>> de5e4bb (tailen)
                     <div className="mb-3">
                         <label className="form-label">Email:</label>
                         <input
@@ -79,8 +148,13 @@ const Login = () => {
                             onClick={() => setIsRegistering(!isRegistering)}
                             style={{ cursor: "pointer" }}
                         >
+<<<<<<< HEAD
               {isRegistering ? "Đăng nhập" : "Đăng ký"}
             </span>
+=======
+                            {isRegistering ? "Đăng nhập" : "Đăng ký"}
+                        </span>
+>>>>>>> de5e4bb (tailen)
                     </p>
                 </div>
             </div>
@@ -88,4 +162,8 @@ const Login = () => {
     );
 };
 
+<<<<<<< HEAD
 export default Login;
+=======
+export default Login;
+>>>>>>> de5e4bb (tailen)

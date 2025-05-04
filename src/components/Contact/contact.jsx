@@ -32,6 +32,7 @@ const Contact = () => {
                 {/* Form gửi liên hệ */}
                 <div className="col-md-6">
                     <h4 className="text-primary">GỬI LIÊN HỆ VỚI CHÚNG TÔI</h4>
+<<<<<<< HEAD
                     <form>
                         <div className="mb-3">
                             <input type="text" className="form-control" placeholder="Họ và tên" required/>
@@ -45,6 +46,23 @@ const Contact = () => {
                         <div className="mb-3">
                             <textarea className="form-control" rows="4" placeholder="Nhập nội dung liên hệ"
                                       required></textarea>
+=======
+                    <form action="http://localhost:8888/btlweb/src/components/Contact/contact.php" method="POST">
+                        <div className="mb-3">
+                            <input type="text" name="name" className="form-control" placeholder="Họ và tên" required/>
+                        </div>
+                        <div className="mb-3">
+                            <input type="tel" name="phone" className="form-control" placeholder="Số điện thoại"
+                                   required/>
+                        </div>
+                        <div className="mb-3">
+                            <input type="email" name="email" className="form-control" placeholder="Địa chỉ Email"
+                                   required/>
+                        </div>
+                        <div className="mb-3">
+                            <textarea name="message" className="form-control" rows="4"
+                                      placeholder="Nhập nội dung liên hệ" required></textarea>
+>>>>>>> de5e4bb (tailen)
                         </div>
                         <button type="submit" className="btn btn-primary w-100">GỬI LIÊN HỆ</button>
                     </form>

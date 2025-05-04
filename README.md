@@ -1,4 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+# BTLWEB
+=======
+>>>>>>> de5e4bb (tailen)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -69,6 +74,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<<<<<<< HEAD
 =======
 # BTLWEB
 >>>>>>> f345ec220c4ad11daa3f8fc6f5499b5edeecfac5
+=======
+>>>>>>> 8da2d3e (first commit on truong)
+>>>>>>> de5e4bb (tailen)
