@@ -5,11 +5,8 @@ import "./Login.css";
 const Login = () => {
     const [isRegistering, setIsRegistering] = useState(false);
     const [formData, setFormData] = useState({
-<<<<<<< HEAD
-=======
         name: "",
         phone: "",
->>>>>>> de5e4bb (tailen)
         email: "",
         password: "",
         confirmPassword: "",
@@ -21,13 +18,6 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-<<<<<<< HEAD
-        if (isRegistering) {
-            if (formData.password !== formData.confirmPassword) {
-                alert("Mật khẩu xác nhận không khớp!");
-                return;
-            }
-=======
 
         // Validation for name
         if (isRegistering && !/^[a-zA-Z\s]+$/.test(formData.name)) {
@@ -60,7 +50,6 @@ const Login = () => {
         }
 
         if (isRegistering) {
->>>>>>> de5e4bb (tailen)
             console.log("Đăng ký với:", formData);
         } else {
             console.log("Đăng nhập với:", formData);
@@ -72,8 +61,6 @@ const Login = () => {
             <div className="auth-box p-4 rounded shadow bg-white">
                 <h2 className="text-center mb-4">{isRegistering ? "Đăng ký" : "Đăng nhập"}</h2>
                 <form onSubmit={handleSubmit}>
-<<<<<<< HEAD
-=======
                     {isRegistering && (
                         <>
                             <div className="mb-3">
@@ -100,7 +87,6 @@ const Login = () => {
                             </div>
                         </>
                     )}
->>>>>>> de5e4bb (tailen)
                     <div className="mb-3">
                         <label className="form-label">Email:</label>
                         <input
@@ -148,13 +134,8 @@ const Login = () => {
                             onClick={() => setIsRegistering(!isRegistering)}
                             style={{ cursor: "pointer" }}
                         >
-<<<<<<< HEAD
-              {isRegistering ? "Đăng nhập" : "Đăng ký"}
-            </span>
-=======
                             {isRegistering ? "Đăng nhập" : "Đăng ký"}
                         </span>
->>>>>>> de5e4bb (tailen)
                     </p>
                 </div>
             </div>
@@ -162,8 +143,4 @@ const Login = () => {
     );
 };
 
-<<<<<<< HEAD
 export default Login;
-=======
-export default Login;
->>>>>>> de5e4bb (tailen)
