@@ -1,14 +1,26 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Home from './components/Home/home';
 import Contact from './components/Contact/contact';
 import Footer from './components/Footer/footer';
 import Login from './components/Login/Login';
+
+import AdminUserManager from './components/Admin/AdminUser/AdminUserManager';
 import AdminHome from './components/Admin/AdminHome/AdminHome';
 import AdminLayout from './components/Admin/AdminHome/AdminLayout';
 import AdminContact from './components/Admin/AdminContact/AdminContact';
 import AdminSiteSetting from './components/Admin/AdminSiteSetting/AdminSiteSetting';
+
+import ProductList from './components/product/ProductList';
+//import ProductDetail from './components/product/ProductDetail';
+//import Cart from './components/product/cart';
+//import AdminOrderManager from './components/product/AdminOrderManager';
+//import AdminProductManager from './components/product/AdminProductManager';
+import ProductManager from './components/Admin/AdminDashboard/AdminDashboard';
+import AdminOrderManager from './components/Admin/OrderList/OrderList';
+//import AdminRoute from "./components/Route/AdminRoute";
 import './App.css';
 
 function App() {
@@ -23,6 +35,9 @@ function App() {
                         <Route path="home" element={<AdminHome />} />
                         <Route path="contact" element={<AdminContact />} />
                         <Route path="sitesetting" element={<AdminSiteSetting />} />
+                        <Route path="cart" element={<AdminOrderManager />} />
+                        <Route path="product" element={<ProductManager />} />
+                        <Route path="user" element={<AdminUserManager />} />
                     </Route>
 
                     {/* Non-Admin Routes */}
@@ -70,13 +85,16 @@ function App() {
                                         </li>
                                     </ul>
                                 </nav>
+
                                 <div className="flex-grow-1">
                                     <Routes>
                                         <Route path="/" element={<Home />} />
                                         <Route path="/contact" element={<Contact />} />
                                         <Route path="/login" element={<Login />} />
+                                        <Route path="/products" element={<ProductList />} />
                                     </Routes>
                                 </div>
+
                                 <Footer />
                             </>
                         }

@@ -90,6 +90,12 @@ const AdminLayout = () => {
                             >
                                 Quản lý Đơn hàng/Giỏ hàng
                             </Nav.Link>
+                            <Nav.Link
+                                href="/admin/user"
+                                className={location.pathname === '/admin/user' ? 'active custom-nav-link' : 'custom-nav-link'}
+                            >
+                                Quản lý người dùng
+                            </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
