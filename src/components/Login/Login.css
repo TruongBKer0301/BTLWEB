@@ -1,0 +1,13 @@
+.auth-container {
+    background: #f4f4f4;
+    height: 100vh;
+}
+
+.auth-box {
+    max-width: 400px;
+    width: 100%;
+}
+
+.toggle-auth:hover {
+    text-decoration: underline;
+}
