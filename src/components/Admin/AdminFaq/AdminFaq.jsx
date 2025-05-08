@@ -159,7 +159,6 @@ export default function AdminFaq() {
                 </table>
             )}
 
-            {/* phân trang */}
             {totalPages>1 && (
                 <div className="pagination">
                     {Array.from({length: totalPages},(_,i)=>i+1).map(p=>(

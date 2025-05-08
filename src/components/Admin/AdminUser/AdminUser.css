@@ -1,0 +1,66 @@
+.admin-user {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.admin-user h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* table người dùng */
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+}
+.user-table th, .user-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+.user-table th {
+    background: #f7f7f7;
+}
+
+/* action buttons */
+.action-buttons button {
+    margin-right: 4px;
+    padding: 4px 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.action-buttons .view { background: #17a2b8; color: #fff; }
+.action-buttons .reset { background: #ffc107; color: #212529; }
+.action-buttons .lock { background: #dc3545; color: #fff; }
+.action-buttons .unlock { background: #28a745; color: #fff; }
+
+/* pagination */
+.pagination {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+.pagination button {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.pagination button.active {
+    background: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+.pagination button:hover:not(.active) {
+    background: #f0f0f0;
+}
+
+/* loading / no-data */
+.loading, .no-data {
+    text-align: center;
+    font-style: italic;
+    margin: 20px 0;
+}
