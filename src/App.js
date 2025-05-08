@@ -7,6 +7,7 @@ import Footer from './components/Footer/footer';
 import Login from './components/Login/Login';
 import About from './components/About/about';
 import Faq from './components/Faq/faq'
+import UserProfile from "./components/UserProfile/UserProfile";
 import AdminHome from './components/Admin/AdminHome/AdminHome';
 import AdminLayout from './components/Admin/AdminHome/AdminLayout';
 import AdminContact from './components/Admin/AdminContact/AdminContact';
@@ -77,6 +78,9 @@ function App() {
                                         <li className="nav-item">
                                             <Link className="nav-link" to="/cart">🛒 Giỏ Hàng</Link>
                                         </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" to="/profile">Hồ sơ</Link>
+                                        </li>
                                     </ul>
                                 </nav>
                                 <div className="flex-grow-1">
@@ -86,6 +90,7 @@ function App() {
                                         <Route path="/login" element={<Login />} />
                                         <Route path="/about" element={<About />} />
                                         <Route path="/faq" element={<Faq />} />
+                                        <Route path="/profile" element={<UserProfile />} />
                                     </Routes>
                                 </div>
                                 <Footer />
