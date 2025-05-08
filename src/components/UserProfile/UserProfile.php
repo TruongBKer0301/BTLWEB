@@ -17,7 +17,7 @@ if ($conn->connect_error) {
 // Lấy id user từ query string, mặc định = 1
 $id = isset($_GET['id']) ? intval($_GET['id']) : 1;
 
-$stmt = $conn->prepare("SELECT user_id, name, email, avatar, phone_number FROM users WHERE user_id = ?");
+$stmt = $conn->prepare("SELECT user_id, username, email, avatar, phone_number FROM users WHERE user_id = ?");
 $stmt->bind_param("i", $id);
 $stmt->execute();
 $result = $stmt->get_result();

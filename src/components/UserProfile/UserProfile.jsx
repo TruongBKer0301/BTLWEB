@@ -93,7 +93,7 @@ const UserProfile = () => {
                     <ul className="list-group list-group-flush text-start">
                         <li className="list-group-item">
                             <FaUser className="me-2 text-primary"/>
-                            <strong>Tên:</strong> {user.name}
+                            <strong>Tên:</strong> {user.username}
                         </li>
                         <li className="list-group-item">
                             <FaEnvelope className="me-2 text-success"/>
