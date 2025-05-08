@@ -1,0 +1,61 @@
+.user-profile {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.profile-card {
+    max-width: 500px;
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.profile-card .card-header {
+    background: linear-gradient(135deg, #4e73df, #224abe);
+}
+
+.avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    transition: transform 0.3s;
+}
+.avatar:hover {
+    transform: scale(1.05);
+}
+
+.profile-card .list-group-item {
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+}
+
+.list-group-item svg {
+    vertical-align: middle;
+}
+
+.btn-outline-primary, .btn-outline-secondary {
+    transition: all 0.2s;
+}
+.btn-outline-primary:hover {
+    background-color: #4e73df;
+    color: #fff;
+}
+.btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.form-card {
+    border: 1px solid #e3e6f0;
+    border-radius: 8px;
+    background-color: #f8f9fc;
+}
+.form-card h5 {
+    font-weight: 500;
+}
+
+.form-card .form-control {
+    border-radius: 4px;
+}
