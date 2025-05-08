@@ -67,6 +67,12 @@ const AdminLayout = () => {
                                 Quản lý Trang Chủ
                             </Nav.Link>
                             <Nav.Link
+                                href="/admin/user"
+                                className={location.pathname === '/admin/user' ? 'active custom-nav-link' : 'custom-nav-link'}
+                            >
+                                Quản lý Tài khoản
+                            </Nav.Link>
+                            <Nav.Link
                                 href="/admin/contact"
                                 className={location.pathname === '/admin/contact' ? 'active custom-nav-link' : 'custom-nav-link'}
                             >

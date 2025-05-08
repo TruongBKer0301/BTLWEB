@@ -11,6 +11,7 @@ import AdminHome from './components/Admin/AdminHome/AdminHome';
 import AdminLayout from './components/Admin/AdminHome/AdminLayout';
 import AdminContact from './components/Admin/AdminContact/AdminContact';
 import AdminFaq from "./components/Admin/AdminFaq/AdminFaq";
+// import AdminUser from "./components/Admin/AdminUser/AdminUser";
 import AdminSiteSetting from './components/Admin/AdminSiteSetting/AdminSiteSetting';
 import './App.css';
 
@@ -27,6 +28,7 @@ function App() {
                         <Route path="contact" element={<AdminContact />} />
                         <Route path="sitesetting" element={<AdminSiteSetting />} />
                         <Route path="faq" element={<AdminFaq />} />
+                        {/*<Route path="user" element={<AdminUser />} />*/}
                     </Route>
 
                     {/* Non-Admin Routes */}

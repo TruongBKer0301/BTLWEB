@@ -10,3 +10,11 @@
 .accordion-body {
     line-height: 1.6;
 }
+
+/* Phân trang */
+.faq-pagination {
+    margin-top: 24px;
+}
+.faq-pagination .page-link {
+    cursor: pointer;
+}

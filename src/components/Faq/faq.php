@@ -1,31 +1,37 @@
 <?php
+header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 
-$host     = 'localhost';
-$user     = 'root';
-$password = '';
-$database = 'iot_web';
-
-$mysqli = new mysqli($host, $user, $password, $database);
+$mysqli = new mysqli('localhost', 'root', '', 'iot_web');
 if ($mysqli->connect_errno) {
     http_response_code(500);
-    echo json_encode(['error' => $mysqli->connect_error]);
+    echo json_encode(['error' => 'DB connection failed']);
     exit;
 }
 
-$sql    = "SELECT id, question, answer FROM faq ORDER BY created_at DESC";
-$result = $mysqli->query($sql);
-$faqs   = [];
+$page   = isset($_GET['page'])  ? max(1, (int)$_GET['page'])   : 1;
+$limit  = isset($_GET['limit']) ? max(1, (int)$_GET['limit'])  : 5;
+$offset = ($page - 1) * $limit;
 
-if ($result) {
-    while ($row = $result->fetch_assoc()) {
-        $faqs[] = $row;
-    }
-} else {
-    http_response_code(500);
-    echo json_encode(['error' => $mysqli->error]);
-    exit;
-}
+$resTotal = $mysqli->query("SELECT COUNT(*) AS cnt FROM faq");
+$total    = (int)$resTotal->fetch_assoc()['cnt'];
+$totalPages = (int)ceil($total / $limit);
 
-$mysqli->close();
-echo json_encode($faqs);
+$stmt = $mysqli->prepare("
+    SELECT id, question, answer, created_at
+    FROM faq
+    ORDER BY created_at DESC
+    LIMIT ?, ?
+");
+$stmt->bind_param('ii', $offset, $limit);
+$stmt->execute();
+$result = $stmt->get_result();
+$data = $result->fetch_all(MYSQLI_ASSOC);
+
+echo json_encode([
+    'data'       => $data,
+    'page'       => $page,
+    'limit'      => $limit,
+    'totalPages' => $totalPages,
+    'total'      => $total
+]);
