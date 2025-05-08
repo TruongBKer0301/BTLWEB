@@ -8,7 +8,6 @@
     margin-bottom: 20px;
 }
 
-/* table người dùng */
 .user-table {
     width: 100%;
     border-collapse: collapse;
@@ -31,12 +30,11 @@
     border-radius: 4px;
     cursor: pointer;
 }
-.action-buttons .view { background: #17a2b8; color: #fff; }
-.action-buttons .reset { background: #ffc107; color: #212529; }
-.action-buttons .lock { background: #dc3545; color: #fff; }
+.action-buttons .view   { background: #17a2b8; color: #fff; }
+.action-buttons .reset  { background: #ffc107; color: #212529; }
+.action-buttons .lock   { background: #dc3545; color: #fff; }
 .action-buttons .unlock { background: #28a745; color: #fff; }
 
-/* pagination */
 .pagination {
     display: flex;
     gap: 8px;
@@ -58,7 +56,6 @@
     background: #f0f0f0;
 }
 
-/* loading / no-data */
 .loading, .no-data {
     text-align: center;
     font-style: italic;

@@ -10,19 +10,28 @@ if ($mysqli->connect_error) {
 }
 
 $action = $_REQUEST['action'] ?? '';
-
 if ($action === 'list') {
     $page  = max(1, intval($_GET['page'] ?? 1));
-    $limit = max(1, intval($_GET['limit'] ?? 20));
+    $limit = max(1, intval($_GET['limit'] ?? 10));
     $offset = ($page - 1) * $limit;
 
-    $totalRes = $mysqli->query("SELECT COUNT(*) AS cnt FROM users");
-    $total = $totalRes->fetch_assoc()['cnt'];
+    $res = $mysqli->query("SELECT COUNT(*) AS cnt FROM users");
+    $total = $res ? intval($res->fetch_assoc()['cnt']) : 0;
 
-    $stmt = $mysqli->prepare("SELECT id, username, email, role, status, created_at 
-                              FROM users 
-                              ORDER BY id DESC 
-                              LIMIT ? OFFSET ?");
+    $sql = "SELECT 
+                user_id AS id,
+                username,
+                email,
+                phone_number,
+                avatar,
+                role,
+                status,
+                created_at,
+                updated_at
+            FROM users
+            ORDER BY user_id DESC
+            LIMIT ? OFFSET ?";
+    $stmt = $mysqli->prepare($sql);
     $stmt->bind_param('ii', $limit, $offset);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -34,13 +43,13 @@ if ($action === 'list') {
 
     echo json_encode([
         'data'  => $data,
-        'total' => intval($total),
+        'total' => $total,
         'page'  => $page
     ]);
     exit;
 }
 
-if ($action === 'reset' || $action === 'lock' || $action === 'unlock') {
+if (in_array($action, ['reset','lock','unlock'])) {
     $id = intval($_POST['id'] ?? 0);
     if (!$id) {
         http_response_code(400);
@@ -49,20 +58,20 @@ if ($action === 'reset' || $action === 'lock' || $action === 'unlock') {
     }
 
     if ($action === 'reset') {
-        // mật khẩu mặc định là '123456'
-        $newHash = password_hash('123456', PASSWORD_DEFAULT);
-        $stmt = $mysqli->prepare("UPDATE users SET hashed_password = ? WHERE id = ?");
+        $newHash = password_hash('12345678', PASSWORD_DEFAULT);
+        $stmt = $mysqli->prepare("UPDATE users SET password = ? WHERE user_id = ?");
         $stmt->bind_param('si', $newHash, $id);
     } else {
         $newStatus = ($action === 'lock') ? 'locked' : 'active';
-        $stmt = $mysqli->prepare("UPDATE users SET status = ? WHERE id = ?");
+        $stmt = $mysqli->prepare("UPDATE users SET status = ? WHERE user_id = ?");
         $stmt->bind_param('si', $newStatus, $id);
     }
+
     if ($stmt->execute()) {
         echo json_encode(['success' => true]);
     } else {
         http_response_code(500);
-        echo json_encode(['error' => 'Update failed']);
+        echo json_encode(['error' => 'Update failed: '.$stmt->error]);
     }
     exit;
 }
