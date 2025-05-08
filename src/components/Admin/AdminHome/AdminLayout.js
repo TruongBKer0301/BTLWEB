@@ -73,8 +73,8 @@ const AdminLayout = () => {
                                 Quản lý Liên Hệ
                             </Nav.Link>
                             <Nav.Link
-                                href="/admin/q&a"
-                                className={location.pathname === '/admin/q&a' ? 'active custom-nav-link' : 'custom-nav-link'}
+                                href="/admin/faq"
+                                className={location.pathname === '/admin/faq' ? 'active custom-nav-link' : 'custom-nav-link'}
                             >
                                 Quản lý Câu hỏi/Đáp
                             </Nav.Link>
