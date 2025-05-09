@@ -84,7 +84,42 @@ const AdminLayout = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ml-auto">
-                            {/* Các Nav.Link giống như bạn đã có */}
+                            <Nav.Link
+                                href="/admin/sitesetting"
+                                className={location.pathname === '/admin/sitesetting' ? 'active custom-nav-link' : 'custom-nav-link'}
+                            >
+                                Quản lý Trang Chủ
+                            </Nav.Link>
+                            <Nav.Link
+                                href="/admin/contact"
+                                className={location.pathname === '/admin/contact' ? 'active custom-nav-link' : 'custom-nav-link'}
+                            >
+                                Quản lý Liên Hệ
+                            </Nav.Link>
+                            <Nav.Link
+                                href="/admin/q&a"
+                                className={location.pathname === '/admin/faq' ? 'active custom-nav-link' : 'custom-nav-link'}
+                            >
+                                Quản lý Câu hỏi/Đáp
+                            </Nav.Link>
+                            <Nav.Link
+                                href="/admin/product"
+                                className={location.pathname === '/admin/product' ? 'active custom-nav-link' : 'custom-nav-link'}
+                            >
+                                Quản lý Sản phẩm
+                            </Nav.Link>
+                            <Nav.Link
+                                href="/admin/cart"
+                                className={location.pathname === '/admin/cart' ? 'active custom-nav-link' : 'custom-nav-link'}
+                            >
+                                Quản lý Đơn hàng
+                            </Nav.Link>
+                            <Nav.Link
+                                href="/admin/user"
+                                className={location.pathname === '/admin/user' ? 'active custom-nav-link' : 'custom-nav-link'}
+                            >
+                                Quản lý người dùng
+                            </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
