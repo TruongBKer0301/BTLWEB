@@ -9,7 +9,7 @@ import Logout from './components/Login/Logout';
 
 import About from './components/About/about';
 import Faq from './components/Faq/faq'
-//import UserProfile from "./components/UserProfile/UserProfile";
+import UserProfile from "./components/UserProfile/UserProfile";
 //import AdminHome from './components/Admin/AdminHome/AdminHome';
 import AdminLayout from './components/Admin/AdminHome/AdminLayout';
 import AdminContact from './components/Admin/AdminContact/AdminContact';
@@ -100,6 +100,7 @@ function App() {
                                         <Route path="/faq" element={<Faq />} />
                                         <Route path="/products" element={<ProductList />} />
                                         <Route path="/logout" element={<Logout />} />
+                                        <Route path="/profile" element={<UserProfile />} />
                                     </Routes>
                                 </div>
                                 <Footer />
@@ -113,5 +114,3 @@ function App() {
 }
 
 export default App;
-
-// bỏ: <Route path="/profile" element={<UserProfile />} /> để test
