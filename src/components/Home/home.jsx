@@ -132,7 +132,7 @@ const Home = () => {
                                 alt="IoT là gì?" className="news-image"/>
                             <div className="news-content">
                                 <p>IOT (INTERNET OF THINGS) LÀ GÌ?</p>
-                                <p>1. Internet vạn vật (IoT) là gì? Thuật ngữ IoT hay Internet vạn vật đề ...</p>
+                                <p>Internet vạn vật (IoT) là gì? Thuật ngữ IoT hay Internet vạn vật đề ...</p>
                             </div>
                         </a>
                     </div>

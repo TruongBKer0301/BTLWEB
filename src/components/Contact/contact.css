@@ -1,3 +1,40 @@
 .mt-5 {
     margin-bottom :20px;
 }
+@media (max-width: 576px) {
+    .contact-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .contact-form {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .col-md-6 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    .form-control {
+        width: 100%;
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .submit-button {
+        width: 100%;
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .contact-info {
+        text-align: center;
+        font-size: 14px;
+        margin-top: 20px;
+    }
+}
