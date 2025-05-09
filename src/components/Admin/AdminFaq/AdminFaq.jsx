@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './AdminFaq.css';
 
+import BASE_URL from '../../../config/config';
+const API_URL = `${BASE_URL}AdminFaq/`;
+
 export default function AdminFaq() {
-    const API = 'http://localhost/btlweb/BTLWEB/src/components/Admin/AdminFaq/AdminFaq.php';
+    const API = `${API_URL}AdminFaq.php`;
     const perPage = 10;
 
     const [faqs, setFaqs]           = useState([]);

@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './AdminUser.css';
 
+import BASE_URL from '../../../config/config';
+const API_URL = `${BASE_URL}AdminUser/`;
+
 export default function AdminUser() {
-    const API = 'http://localhost/btlweb/BTLWEB/src/components/Admin/AdminUser/AdminUser.php';
+    const API = `${API_URL}AdminUser.php`;
     const perPage = 10;
 
     const [users, setUsers] = useState([]);

@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './faq.css';
 
+import BASE_URL from '../../config/config';
+const API_URL = `${BASE_URL}Faq/`;
+
 const Faq = () => {
     const [faqs, setFaqs] = useState([]);
     const [openIndex, setOpen] = useState(null);
@@ -10,7 +13,7 @@ const Faq = () => {
     const limit = 5;
 
     const fetchFaqs = (p) => {
-        fetch(`http://localhost/btlweb/BTLWEB/src/components/Faq/faq.php?page=${p}&limit=${limit}`)
+        fetch(`${API_URL}faq.php?page=${p}&limit=${limit}`)
             .then(res => res.json())
             .then(data => {
                 setFaqs(data.data);

@@ -2,6 +2,9 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './contact.css';
 
+//import BASE_URL from '../../../config/config';
+//const API_URL = `${BASE_URL}Contact/`;
+
 const Contact = () => {
     return (
         <div className="container mt-5">

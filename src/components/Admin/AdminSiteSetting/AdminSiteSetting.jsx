@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+import BASE_URL from '../../../config/config';
+const API_URL = `${BASE_URL}AdminSiteSetting/`
+
 function SiteSettings() {
     const [settings, setSettings] = useState({});
     const [message, setMessage] = useState("");
 
     useEffect(() => {
-        axios.get('http://localhost:8888/btlweb/src/components/Admin/AdminSiteSetting/AdminSiteSetting.php?action=get')
+        axios.get(`${API_URL}AdminSiteSetting.php?action=get`)
             .then((res) => setSettings(res.data))
             .catch((err) => console.error(err));
     }, []);
@@ -16,7 +19,7 @@ function SiteSettings() {
     };
 
     const handleSubmit = () => {
-        axios.post('http://localhost:8888/btlweb/src/components/Admin/AdminSiteSetting/AdminSiteSetting.php?action=update', settings)
+        axios.post(`${API_URL}AdminSiteSetting.php?action=update`, settings)
             .then(() => setMessage("Cập nhật thành công!"))
             .catch(() => setMessage("Cập nhật thất bại!"));
     };

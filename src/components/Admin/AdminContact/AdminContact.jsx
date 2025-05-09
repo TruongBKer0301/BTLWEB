@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import BASE_URL from '../../../config/config';
+const API_URL = `${BASE_URL}AdminContact/`;
+
 
 const AdminContact = () => {
     const [contacts, setContacts] = useState([]);
@@ -8,14 +11,14 @@ const AdminContact = () => {
 
     // Fetch contacts from the backend
     useEffect(() => {
-        axios.get('http://localhost:8888/btlweb/src/components/Admin/AdminContact/AdminContact.php')
+        axios.get(`${API_URL}AdminContact.php`)
             .then(response => setContacts(response.data))
             .catch(error => console.error('Error fetching contacts:', error));
     }, []);
 
     // Handle actions
     const handleAction = (id, action) => {
-        axios.post('http://localhost:8888/btlweb/src/components/Admin/AdminContact/AdminContact.php', {
+        axios.post(`${API_URL}AdminContact.php`, {
             id,
             action
         })
