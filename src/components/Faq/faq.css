@@ -1,0 +1,20 @@
+.faq {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.accordion-button {
+    font-weight: 500;
+}
+
+.accordion-body {
+    line-height: 1.6;
+}
+
+/* Phân trang */
+.faq-pagination {
+    margin-top: 24px;
+}
+.faq-pagination .page-link {
+    cursor: pointer;
+}
